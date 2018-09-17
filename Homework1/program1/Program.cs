@@ -12,7 +12,7 @@ namespace program1
         {
             string s=System.Console.ReadLine();
             System.Console.WriteLine(s);
-            string s2 = System.Console.ReadLine();
+            
 
         }
     }
