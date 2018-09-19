@@ -38,9 +38,7 @@ namespace program1
                     j = 0;
                 }
             }
-            if(n!=i)
-                Console.WriteLine(n);
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
         }
     }
 }
