@@ -20,7 +20,7 @@ namespace program3
 
             findPrime();
             //输出素数
-            for (int i = 1; i < primeCount; ++i)
+            for (int i = 1; i < primeCount+1; ++i)
             {
                     Console.WriteLine(prime[i]);
             }
@@ -35,7 +35,7 @@ namespace program3
                     {
                         primeCount++;                                     //素数个数加一
                         prime[primeCount] = i;                            //素数保存到数组中
-                        for (int j = 2 * i; j <= 100; j += i)             //若j将能被i整除，j就是合数，记num[j]=1
+                        for (int j = 2 * i; j <= 100; j += i)             //j是i的n（n>=2）倍，记num[j]=1
                         {
                             num[j] = 1;
                         }
