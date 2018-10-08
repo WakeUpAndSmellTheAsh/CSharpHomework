@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5F7AFBC7-AE2B-4281-B93A-BE4934B74E46}</ProjectGuid>
+    <ProjectGuid>{1B59CB1B-721E-4294-A45D-D027560E7275}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>program1</RootNamespace>
-    <AssemblyName>program1</AssemblyName>
+    <RootNamespace>program2</RootNamespace>
+    <AssemblyName>program2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ring.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderDetails.cs" />
+    <Compile Include="OrderService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

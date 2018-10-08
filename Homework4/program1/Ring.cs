@@ -19,7 +19,6 @@ namespace program1
 
             private DateTime ringTime;
             private Timer timer;
-            public bool OK { get => !timer.Enabled; }
             public Ring(int hour, int minute, int second)
             {
                 if (DateTime.TryParse($"{hour}:{minute}:{second}", out ringTime))
