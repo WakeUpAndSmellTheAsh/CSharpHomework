@@ -17,7 +17,10 @@ namespace program1
             int iMinute = Int32.Parse(Console.ReadLine());
             Console.WriteLine("输入秒");
             int iSecond = Int32.Parse(Console.ReadLine());
+
             Ring r1=new Ring(iHour, iMinute, iSecond);
+
+            Console.ReadKey();
             Console.WriteLine("哼唧");
 
         }
