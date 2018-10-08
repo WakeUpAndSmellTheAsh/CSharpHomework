@@ -65,7 +65,7 @@ namespace program1
                 timer.Start();
                 timer.Elapsed += RingOrNot;
 
-                //  alarm1.Event1 += RingOrNot;
+               
 
 
                 //while(true)
