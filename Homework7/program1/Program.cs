@@ -36,10 +36,10 @@ namespace program1
                 Order order3 = new Order(3, "王五");
 
                 order1.AddDetails(orderDetails1);
-                order1.AddDetails(orderDetails2);
+              //  order1.AddDetails(orderDetails2);
 
                 order2.AddDetails(orderDetails2);
-                order2.AddDetails(orderDetails3);
+              //  order2.AddDetails(orderDetails3);
                 order3.AddDetails(orderDetails1);
 
                 OrderService os = new OrderService();
@@ -68,13 +68,14 @@ namespace program1
                     Console.WriteLine(od.ToString());
                 //查询订单进而超过某一个值的订单
                 Console.WriteLine("GetOrdersByAmount:'over 10000'");
-                orders = os.QueryByAmount(10000);
-                foreach (Order od in orders)
+                List<Order> orders2 = os.QueryByAmount(10000);
+                foreach (Order od in orders2)
                     Console.WriteLine(od.ToString());
 
                 Console.WriteLine("___________序列化___和____反序列化__________");
                 Console.WriteLine("__________出了点问题 订单中的的每一项（也就是Detail)会输出两次__但是订单总额又是对的？？___");
                 os.Export(@"D:\orderService.xml");
+          
                 List<Order> ods = OrderService.Import(@"D:\orderService.xml").QueryAllOrders();
                 foreach (Order od in ods)
                     Console.WriteLine(od.ToString());

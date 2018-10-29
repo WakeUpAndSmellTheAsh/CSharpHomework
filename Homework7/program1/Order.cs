@@ -19,7 +19,8 @@ namespace program1
     [Serializable]
     public class Order
     {
-        public List<OrderDetail> details = new List<OrderDetail>();
+      
+        public List<OrderDetail> Details { get; } = new List<OrderDetail>();
         public double Amount;
         public Order() { }
         public Order(int Id,String Customer)
@@ -29,10 +30,7 @@ namespace program1
         }    
         public int OrderId { get; set; }     
         public String OrderCustomer { get; set; }
-        public List<OrderDetail> Details
-        {
-            get => this.details;
-        }
+      
 
         public void AddDetails(OrderDetail orderDetail)
         {
@@ -40,14 +38,14 @@ namespace program1
             {
                 throw new Exception($"orderDetails-{orderDetail.Id} is already existed!");
             }
-            details.Add(orderDetail);
+            Details.Add(orderDetail);
             Amount += orderDetail.amount;
         }
         public override string ToString()
         {
-            string result = "---------------------------------------------------------------------------\n";
+            string result = "\n";
             result += $"orderId:{OrderId}, customer:({OrderCustomer}" + $", Amount:{Amount}) ";
-            details.ForEach(od => result += "\n\t" + od);
+            Details.ForEach(od => result += "\n\t" + od);
             result += "\n---------------------------------------------------------------------------";
             return result;
         }
