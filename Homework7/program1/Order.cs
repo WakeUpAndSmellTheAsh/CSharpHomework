@@ -20,7 +20,7 @@ namespace program1
     public class Order
     {
       
-        public List<OrderDetail> Details { get; } = new List<OrderDetail>();
+        public List<OrderDetail> Details { get; set; } = new List<OrderDetail>();
         public double Amount;
         public Order() { }
         public Order(int Id,String Customer)

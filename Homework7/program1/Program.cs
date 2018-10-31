@@ -73,7 +73,7 @@ namespace program1
                     Console.WriteLine(od.ToString());
 
                 Console.WriteLine("___________序列化___和____反序列化__________");
-                Console.WriteLine("__________出了点问题 订单中的的每一项（也就是Detail)会输出两次__但是订单总额又是对的？？___");
+                Console.WriteLine("_____________");
                 os.Export(@"D:\orderService.xml");
           
                 List<Order> ods = OrderService.Import(@"D:\orderService.xml").QueryAllOrders();
