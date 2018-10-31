@@ -21,7 +21,7 @@ namespace program1
     {
       
         public List<OrderDetail> Details { get; set; } = new List<OrderDetail>();
-        public double Amount;
+       
         public Order() { }
         public Order(int Id,String Customer)
         {
@@ -30,7 +30,8 @@ namespace program1
         }    
         public int OrderId { get; set; }     
         public String OrderCustomer { get; set; }
-      
+        public double Amount { get; set; }
+
 
         public void AddDetails(OrderDetail orderDetail)
         {
