@@ -17,7 +17,7 @@ namespace WinForm
         {
             InitializeComponent();
          
-            //Init();
+            
             Goods milk = new Goods(1, "Milk", 69.9);
             Goods eggs = new Goods(2, "eggs", 4.99);
             Goods apple = new Goods(3, "apple", 5.59);
@@ -31,8 +31,9 @@ namespace WinForm
             Order order3 = new Order(3, "王五");
 
             order1.AddDetails(orderDetails1);
+            order1.AddDetails(orderDetails2);
             order2.AddDetails(orderDetails2);
-            order3.AddDetails(orderDetails1);
+            order3.AddDetails(orderDetails3);
 
             OrderService os = new OrderService();
             os.AddOrder(order1);
@@ -57,7 +58,6 @@ namespace WinForm
         {
             //显示所有订单
 
-         
 
         }
 
@@ -70,6 +70,10 @@ namespace WinForm
         {
 
         }
-      
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace program1
     [Serializable]
     public class OrderDetail
     {
-        public double amount;
+        public double amount { get; set; }
         public OrderDetail(){ }
         public OrderDetail(int id, Goods goods, int quantity)
         {
