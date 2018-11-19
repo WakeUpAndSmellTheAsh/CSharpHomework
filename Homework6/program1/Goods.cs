@@ -9,19 +9,18 @@ namespace program1
     [Serializable]
     public class Goods
     {
-        public double price;
         public Goods() { }
         public Goods(int id, string name, double value)
         {
-            Id = id;
-            Name = name;
+            GoodId = id;
+            GoodName = name;
             Price = value;
         }
 
-        public int Id { get; set; }
+        public int GoodId { get; set; }
+        public string GoodName { get; set; }
 
-        public string Name { get; set; }
-
+        public double price;
         public double Price
         {
             get { return price; }
@@ -35,7 +34,43 @@ namespace program1
 
         public override string ToString()
         {
-            return $"GoodId:{Id}, GoodName:{Name}, Value:{Price}";
+            return $"GoodId:{GoodId}, GoodName:{GoodName}, Value:{Price}";
         }
     }
 }
+
+//namespace program1
+//{
+//    [Serializable]
+//    public class Goods
+//    {
+//        public double price;
+//        public Goods() { }
+//        public Goods(int id, string name, double value)
+//        {
+//            Id = id;
+//            Name = name;
+//            Price = value;
+//        }
+
+//        public int Id { get; set; }
+
+//        public string Name { get; set; }
+
+//        public double Price
+//        {
+//            get { return price; }
+//            set
+//            {
+//                if (value < 0)
+//                    throw new ArgumentOutOfRangeException("value must >= 0!");
+//                price = value;
+//            }
+//        }
+
+//        public override string ToString()
+//        {
+//            return $"GoodId:{Id}, GoodName:{Name}, Value:{Price}";
+//        }
+//    }
+//}

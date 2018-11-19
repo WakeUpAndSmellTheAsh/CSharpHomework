@@ -11,8 +11,8 @@ namespace program1
     [Serializable]
     public class OrderDetail
     {
-        public double amount;
-        public OrderDetail(){ }
+        public double amount { get; set; }
+        public OrderDetail() { }
         public OrderDetail(int id, Goods goods, int quantity)
         {
             this.Id = id;
@@ -31,14 +31,14 @@ namespace program1
         {
             var detail = obj as OrderDetail;
             return detail != null &&
-                Goods.Id == detail.Goods.Id &&
+                Goods.GoodId == detail.Goods.GoodId &&
                 Quantity == detail.Quantity;
         }
 
         public override int GetHashCode()
         {
             var hashCode = 1522631281;
-            hashCode = hashCode * -1521134295 + Goods.Name.GetHashCode();
+            hashCode = hashCode * -1521134295 + Goods.GoodName.GetHashCode();
             hashCode = hashCode * -1521134295 + Quantity.GetHashCode();
             return hashCode;
         }
@@ -47,7 +47,7 @@ namespace program1
         {
             string result = "";
             result += $"orderDetailId:{Id}:  ";
-            result += Goods + $", quantity:{Quantity}"+ $",  amount:{amount}";
+            result += Goods + $", quantity:{Quantity}" + $",  amount:{amount}";
             return result;
         }
     }

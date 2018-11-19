@@ -9,31 +9,27 @@ using System.Runtime.Serialization;
 
 using System.Xml.Serialization;
 
-/*
 
- 
-     */
+
 namespace program1
 {
     [Serializable]
     public class OrderService
     {
 
-        //public Dictionary<uint, Order> orderDict = new Dictionary<uint, Order>();
-        //不再使用  Dictionary ，它无法直接序列化
         public List<Order> orderDict = new List<Order>();
-
         public void AddOrder(Order order) => orderDict.Add(order);
-     
+
 
         public List<Order> QueryAllOrders()
-        {           
+        {
             return orderDict.ToList();
         }
         public Order GetById(int orderId)
         {
             return orderDict[orderId];
         }
+
         public List<Order> QueryByGoodsName(string goodsName)
         {
             List<Order> result = new List<Order>();
@@ -41,7 +37,7 @@ namespace program1
             {
                 foreach (OrderDetail detail in order.Details)
                 {
-                    if (detail.Goods.Name == goodsName)
+                    if (detail.Goods.GoodName == goodsName)
                     {
                         result.Add(order);
                         break;
@@ -53,7 +49,7 @@ namespace program1
         public List<Order> QueryByCustomerName(string customerName)
         {
             var query = orderDict
-                .Where(order => order.OrderCustomer.Name == customerName);
+                .Where(order => order.OrderCustomer == customerName);
             return query.ToList();
         }
         public List<Order> QueryByOrderID(string orderId)
@@ -77,7 +73,7 @@ namespace program1
             string xmlFileName = path;
             FileStream fs = new FileStream(xmlFileName, FileMode.Create);
             xmlSerializer.Serialize(fs, this);
-            fs.Close();         
+            fs.Close();
         }
         public static OrderService Import(string path)
         {
@@ -90,3 +86,5 @@ namespace program1
 
     }
 }
+
+

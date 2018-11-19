@@ -21,8 +21,7 @@ namespace program1
         {
             try
             {
-                Customer customer1 =new Customer(1, "张三");
-                Customer customer2 = new Customer(2, "李四");
+             
 
                 Goods milk = new Goods(1, "Milk", 69.9);
                 Goods eggs = new Goods(2, "eggs", 4.99);
@@ -32,9 +31,10 @@ namespace program1
                 OrderDetail orderDetails2 = new OrderDetail(2, eggs, 2);
                 OrderDetail orderDetails3 = new OrderDetail(3, milk, 1000);
 
-                Order order1 = new Order(1, customer1);             
-                Order order2 = new Order(2, customer2);
-                Order order3 = new Order(3, customer2);
+
+                Order order1 = new Order(1, "张三");
+                Order order2 = new Order(2, "李四");
+                Order order3 = new Order(3, "王五");
 
                 order1.AddDetails(orderDetails1);
                 order1.AddDetails(orderDetails2);
@@ -74,7 +74,7 @@ namespace program1
                     Console.WriteLine(od.ToString());
 
                 Console.WriteLine("___________序列化___和____反序列化__________");
-                Console.WriteLine("__________出了点问题 订单中的的每一项（也就是Detail)会输出两次__但是订单总额又是对的？？___");
+              
                 os.Export(@"D:\orderService.xml");
                 List<Order> ods = OrderService.Import(@"D:\orderService.xml").QueryAllOrders();
                 foreach (Order od in ods)

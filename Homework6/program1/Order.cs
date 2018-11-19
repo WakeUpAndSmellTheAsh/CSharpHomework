@@ -19,20 +19,19 @@ namespace program1
     [Serializable]
     public class Order
     {
-        public List<OrderDetail> details = new List<OrderDetail>();
-        public double Amount;
+
+        public List<OrderDetail> Details { get; set; } = new List<OrderDetail>();
+
         public Order() { }
-        public Order(int Id,Customer Customer)
+        public Order(int Id, String Customer)
         {
             this.OrderId = Id;
             this.OrderCustomer = Customer;
-        }    
-        public int OrderId { get; set; }     
-        public Customer OrderCustomer { get; set; }
-        public List<OrderDetail> Details
-        {
-            get => this.details;
         }
+        public int OrderId { get; set; }
+        public String OrderCustomer { get; set; }
+        public double Amount { get; set; }
+
 
         public void AddDetails(OrderDetail orderDetail)
         {
@@ -40,16 +39,56 @@ namespace program1
             {
                 throw new Exception($"orderDetails-{orderDetail.Id} is already existed!");
             }
-            details.Add(orderDetail);
-            Amount += orderDetail.Quantity * orderDetail.Goods.Price;
+            Details.Add(orderDetail);
+            Amount += orderDetail.amount;
         }
         public override string ToString()
         {
-            string result = "---------------------------------------------------------------------------\n";
+            string result = "\n";
             result += $"orderId:{OrderId}, customer:({OrderCustomer}" + $", Amount:{Amount}) ";
-            details.ForEach(od => result += "\n\t" + od);
+            Details.ForEach(od => result += "\n\t" + od);
             result += "\n---------------------------------------------------------------------------";
             return result;
         }
     }
 }
+
+//namespace program1
+//{
+//    [Serializable]
+//    public class Order
+//    {
+//        public List<OrderDetail> details = new List<OrderDetail>();
+//        public double Amount;
+//        public Order() { }
+//        public Order(int Id,Customer Customer)
+//        {
+//            this.OrderId = Id;
+//            this.OrderCustomer = Customer;
+//        }    
+//        public int OrderId { get; set; }     
+//        public Customer OrderCustomer { get; set; }
+//        public List<OrderDetail> Details
+//        {
+//            get => this.details;
+//        }
+
+//        public void AddDetails(OrderDetail orderDetail)
+//        {
+//            if (this.Details.Contains(orderDetail))
+//            {
+//                throw new Exception($"orderDetails-{orderDetail.Id} is already existed!");
+//            }
+//            details.Add(orderDetail);
+//            Amount += orderDetail.Quantity * orderDetail.Goods.Price;
+//        }
+//        public override string ToString()
+//        {
+//            string result = "---------------------------------------------------------------------------\n";
+//            result += $"orderId:{OrderId}, customer:({OrderCustomer}" + $", Amount:{Amount}) ";
+//            details.ForEach(od => result += "\n\t" + od);
+//            result += "\n---------------------------------------------------------------------------";
+//            return result;
+//        }
+//    }
+//}

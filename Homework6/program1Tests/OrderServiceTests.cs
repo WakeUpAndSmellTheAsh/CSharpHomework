@@ -14,14 +14,13 @@ namespace program1.Tests
         [TestMethod()]
         public void AddOrderTest()
         {
-            Customer customer1 = new Customer(1, "王五");
-            Customer customer2 = new Customer(2, "马六");
+       
             Goods milk = new Goods(1, "Milk", 69.9);
             Goods eggs = new Goods(2, "eggs", 4.99);
             Goods apple = new Goods(3, "apple", 5.59);
             OrderDetail orderDetails1 = new OrderDetail(1, apple, 8);
             OrderDetail orderDetails2 = new OrderDetail(2, eggs, 2);
-            Order order1 = new Order(1, customer1);
+            Order order1 = new Order(1, "张三");
             order1.AddDetails(orderDetails1);
             order1.AddDetails(orderDetails2);
             OrderService orderService = new OrderService();
@@ -34,8 +33,7 @@ namespace program1.Tests
         [TestMethod()]
         public void QueryAllOrdersTest()
         {
-            Customer customer1 = new Customer(1, "张三");
-            Customer customer2 = new Customer(2, "李四");
+    
 
             Goods milk = new Goods(1, "Milk", 69.9);
             Goods eggs = new Goods(2, "eggs", 4.99);
@@ -45,8 +43,8 @@ namespace program1.Tests
             OrderDetail orderDetails2 = new OrderDetail(2, eggs, 2);
 
 
-            Order order1 = new Order(1, customer1);
-            Order order2 = new Order(2, customer2);
+            Order order1 = new Order(1, "张三");
+            Order order2 = new Order(2, "李四");
             order1.AddDetails(orderDetails1);
             order2.AddDetails(orderDetails2);
 
@@ -59,8 +57,7 @@ namespace program1.Tests
         [TestMethod()]
         public void QueryByGoodsNameTest()
         {
-            Customer customer1 = new Customer(1, "张三");
-            Customer customer2 = new Customer(2, "李四");
+       
 
             Goods milk = new Goods(1, "Milk", 69.9);
             Goods eggs = new Goods(2, "eggs", 4.99);
@@ -70,8 +67,8 @@ namespace program1.Tests
             OrderDetail orderDetails2 = new OrderDetail(2, eggs, 2);
 
 
-            Order order1 = new Order(1, customer1);
-            Order order2 = new Order(2, customer2);
+            Order order1 = new Order(1, "张三");
+            Order order2 = new Order(2, "李四");
             order1.AddDetails(orderDetails1);
             order2.AddDetails(orderDetails2);
 
@@ -84,8 +81,7 @@ namespace program1.Tests
         [TestMethod()]
         public void QueryByCustomerNameTest()
         {
-            Customer customer1 = new Customer(1, "张三");
-            Customer customer2 = new Customer(2, "李四");
+  
 
             Goods milk = new Goods(1, "Milk", 69.9);
             Goods eggs = new Goods(2, "eggs", 4.99);
@@ -94,9 +90,8 @@ namespace program1.Tests
             OrderDetail orderDetails1 = new OrderDetail(1, milk, 8);
             OrderDetail orderDetails2 = new OrderDetail(2, eggs, 2);
 
-
-            Order order1 = new Order(1, customer1);
-            Order order2 = new Order(2, customer2);
+            Order order1 = new Order(1, "张三");
+            Order order2 = new Order(2, "李四");
             order1.AddDetails(orderDetails1);
             order2.AddDetails(orderDetails2);
 
@@ -109,8 +104,7 @@ namespace program1.Tests
         [TestMethod()]
         public void QueryByOrderIDTest()
         {
-            Customer customer1 = new Customer(1, "张三");
-            Customer customer2 = new Customer(2, "李四");
+    
 
             Goods milk = new Goods(1, "Milk", 69.9);
             Goods eggs = new Goods(2, "eggs", 4.99);
@@ -120,8 +114,8 @@ namespace program1.Tests
             OrderDetail orderDetails2 = new OrderDetail(2, eggs, 2);
 
 
-            Order order1 = new Order(1, customer1);
-            Order order2 = new Order(2, customer2);
+            Order order1 = new Order(1, "张三");
+            Order order2 = new Order(2, "李四");
             order1.AddDetails(orderDetails1);
             order2.AddDetails(orderDetails2);
 
@@ -134,14 +128,13 @@ namespace program1.Tests
         [TestMethod()]
         public void QueryByAmountTest()
         {
-            Customer customer1 = new Customer(1, "张三");
-            Customer customer2 = new Customer(2, "李四");
+
             Goods milk = new Goods(1, "Milk", 69.9);
             Goods eggs = new Goods(2, "eggs", 4.99);
             OrderDetail orderDetails1 = new OrderDetail(1, milk, 1000);
             OrderDetail orderDetails2 = new OrderDetail(2, eggs, 2);
-            Order order1 = new Order(1, customer1);
-            Order order2 = new Order(2, customer2);
+            Order order1 = new Order(1, "张三");
+            Order order2 = new Order(2, "李四");
             order1.AddDetails(orderDetails1);
             order2.AddDetails(orderDetails2);
             OrderService os = new OrderService();
@@ -160,14 +153,13 @@ namespace program1.Tests
         [TestMethod()]
         public void ExportTest()
         {
-            Customer customer1 = new Customer(1, "张三");
-            Customer customer2 = new Customer(2, "李四");
+
             Goods milk = new Goods(1, "Milk", 69.9);
             Goods eggs = new Goods(2, "eggs", 4.99);
             OrderDetail orderDetails1 = new OrderDetail(1, milk, 1000);
             OrderDetail orderDetails2 = new OrderDetail(2, eggs, 2);
-            Order order1 = new Order(1, customer1);
-            Order order2 = new Order(2, customer2);
+            Order order1 = new Order(1, "张三");
+            Order order2 = new Order(2, "李四");
             order1.AddDetails(orderDetails1);
             order2.AddDetails(orderDetails2);
             OrderService os = new OrderService();
