@@ -21,7 +21,8 @@ namespace program1
 
         public List<Order> orderDict = new List<Order>();
         public void AddOrder(Order order) => orderDict.Add(order);
-     
+        public void RemoveOrder(Order order) => orderDict.Remove(order);
+
 
         public List<Order> QueryAllOrders()
         {           
@@ -56,9 +57,9 @@ namespace program1
         }
         public List<Order> QueryByOrderID(string orderId)
         {
-            uint unit1 = Convert.ToUInt32(orderId);
+          //  uint unit1 = Convert.ToUInt32(orderId);
             var query = orderDict
-                .Where(order => order.OrderId == unit1);
+                .Where(order => order.OrderId == orderId);
             return query.ToList();
         }
         //查询金额大于传入参数的订单

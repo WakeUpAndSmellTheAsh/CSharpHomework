@@ -23,12 +23,12 @@ namespace program1
         public List<OrderDetail> Details { get; set; } = new List<OrderDetail>();
        
         public Order() { }
-        public Order(int Id,String Customer)
+        public Order(string Id,String Customer)
         {
             this.OrderId = Id;
             this.OrderCustomer = Customer;
         }    
-        public int OrderId { get; set; }     
+        public string OrderId { get; set; }     
         public String OrderCustomer { get; set; }
         public double Amount { get; set; }
 

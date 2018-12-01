@@ -20,6 +20,13 @@ namespace program1
             this.Quantity = quantity;
             amount = Quantity * goods.Price;
         }
+        public OrderDetail(Goods goods, int quantity)
+        {
+
+            this.Goods = goods;
+            this.Quantity = quantity;
+            amount = Quantity * goods.Price;
+        }
 
         public int Id { get; set; }
 

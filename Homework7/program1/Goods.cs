@@ -16,7 +16,12 @@ namespace program1
             GoodName = name;
             Price = value;
         }
-        
+        public Goods(string name, double value)
+        {
+            GoodName = name;
+            Price = value;
+        }
+
         public int GoodId { get; set; }
         public string GoodName { get; set; }
 
